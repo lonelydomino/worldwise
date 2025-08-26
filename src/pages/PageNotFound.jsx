@@ -1,7 +1,10 @@
+import PageNav from "../components/PageNav"
 
 const PageNotFound = () => {
   return (
-    <div>PageNotFound</div>
+    <div>
+        <PageNav />
+        PageNotFound</div>
   )
 }
 

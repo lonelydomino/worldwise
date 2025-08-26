@@ -1,8 +1,12 @@
+import PageNav from "../components/PageNav"
 
 
 const Pricing = () => {
   return (
-    <div>Prcing</div>
+    <div>
+        <PageNav />
+
+      Pricing</div>
   )
 }
 
