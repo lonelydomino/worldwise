@@ -28,7 +28,8 @@ const AuthProvider = ({ children }) => {
     reducer,
     initialState
   );
-  const login = (email, password) => {
+  const login = (email, password, e) => {
+    e.preventDefault()
     if(email === FAKE_USER.email && password === FAKE_USER.password) dispatch({type: 'login', payload: FAKE_USER})
   };
   const logout = () => {
@@ -42,6 +43,7 @@ const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {
     throw new Error("AUthContext was called outside AuthProvider");
-  }
+}
+return context
 };
 export { AuthProvider, useAuth}
