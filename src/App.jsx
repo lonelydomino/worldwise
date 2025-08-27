@@ -16,7 +16,6 @@ import { CitiesProvider } from "./context/CitiesContext";
 function App() {
   return (
     <div>
-      {/* <PageNav /> */}
       <CitiesProvider>
         <BrowserRouter>
           <Routes>
