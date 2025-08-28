@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { createContext, useEffect, useContext, useReducer } from "react";
+import { createContext, useEffect, useContext, useReducer, useCallback } from "react";
 
 const CitiesContext = createContext();
 const BASE_URL = "http://localhost:9000";
@@ -85,7 +85,7 @@ const CitiesProvider = ({ children }) => {
     }
   };
 
-  const getCity = async (id) => {
+  const getCity = useCallback( async (id) => {
     if (Number(id) === currentCity.id) return
 
     
@@ -100,7 +100,7 @@ const CitiesProvider = ({ children }) => {
         payload: "there was an error loading the city...",
       });
     }
-  };
+  }, [currentCity.id])
 
   return (
     <CitiesContext.Provider
